@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 require("./db/mongoose");
 const path = require("path");
 const port = process.env.PORT || 5000;
