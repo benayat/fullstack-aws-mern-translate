@@ -1,6 +1,6 @@
 const express = require("express");
 require("./db/mongoose");
-const path = require(path);
+const path = require("path");
 const port = process.env.PORT || 5000;
 const app = express();
 const recipeRouter = require("./routes/recipeRouter");
