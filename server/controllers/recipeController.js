@@ -6,7 +6,7 @@ const createRecipe = async (req, res) => {
   try {
     console.log(req.body.url);
 
-    let checkExists = await Recipe.findone({ url: req.body.url });
+    let checkExists = await Recipe.findOne({ url: req.body.url });
     if (checkExists) throw Error("already exists");
     let recipeScrapped = await recipeScrapper(req.body.url);
     recipeScrapped = {
