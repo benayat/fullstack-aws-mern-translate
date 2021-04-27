@@ -4,8 +4,6 @@
     align-items: center;
     height: 100vh;
     background-image: url('../Assets/food.jpg');
-    filter: brightness(50%);
-
     background-color: #FFFAFC;
     background-repeat: no-repeat;
     background-size: contain;
