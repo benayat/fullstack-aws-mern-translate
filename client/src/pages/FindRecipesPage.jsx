@@ -8,7 +8,7 @@ import '../style/FindRecipeStyle.css';
 
 const FindRecipesPage = () => {
 
-const [data,setData] = useState([]);
+const [data,setData] = useState(null);
 const [url,setUrl] = useState();
 const [loaderToggle,setLoaderToggle] = useState(false);
 
@@ -16,10 +16,9 @@ const [loaderToggle,setLoaderToggle] = useState(false);
 const getApi= async () => {
     console.log("getApi");
     try{
-        const response = await axios.post("/api/recipes",{ url:"https://www.iamcook.ru/showrecipe/20669"
-    });
-        setData(response);
-        console.log("jjjjjjjjj",response);
+        const response = await axios.post("/api/recipes",{ url:url});
+        setData(response.data);
+        console.log(response.data);
         setLoaderToggle(false)
 
     }catch(err){
@@ -46,7 +45,7 @@ const changeHandler = (e)=>{
                 <Button click={clickHandler} content="Translate"/>
             </div>
             {
-                (data==null) ? null :<RecipeCard/>
+                (data==null) ? null :<RecipeCard data={data}/>
                 
             }
             {
