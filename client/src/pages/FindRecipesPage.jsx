@@ -11,9 +11,7 @@ const FindRecipesPage = () => {
 const [data,setData] = useState([]);
 const [url,setUrl] = useState();
 const [loaderToggle,setLoaderToggle] = useState(false);
-// const [description,setDescription] = useState();
-// const [ingredients,setIngredients] = useState();
-// const [prepStages,setPrepStages] = useState();
+
 
 const getApi= async () => {
     console.log("getApi");

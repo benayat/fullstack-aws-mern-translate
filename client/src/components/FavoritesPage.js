@@ -3,6 +3,7 @@ import Input from "./Input";
 import SelectOption from "./SelectOption";
 import "../style/favoritepage.css";
 import Card from "./sambleCard";
+import FindRecipesPage from "../pages/FindRecipesPage";
 
 // const myData = [{
 //     "title":"food one",
@@ -50,7 +51,7 @@ const FavoritesPage = () => {
         <SelectOption handleChange={(val) => setOption(val)} />
         <Input handleValue={(val) => setInput(val)} />
       </div>
-      <div>{data && <Card data={data} />}</div>
+      <div>{data && <FindRecipesPage data={data} />}</div>
     </div>
   );
 };
