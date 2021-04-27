@@ -8,7 +8,7 @@ import '../style/FindRecipeStyle.css';
 
 const FindRecipesPage = () => {
 
-const [data,setData] = useState(null);
+const [data,setData] = useState([]);
 const [url,setUrl] = useState();
 const [loaderToggle,setLoaderToggle] = useState(false);
 
@@ -16,22 +16,22 @@ const [loaderToggle,setLoaderToggle] = useState(false);
 const getApi= async () => {
     console.log("getApi");
     try{
-        const response = await axios.get(url);
+        const response = await axios.post("/api/recipes",{ url:"https://www.iamcook.ru/showrecipe/20669"
+    });
         setData(response);
         console.log("jjjjjjjjj",response);
         setLoaderToggle(false)
-        
-       
+
     }catch(err){
             console.log(err); 
     }
 }
 
 
-const clickHandler=()=>{
+const clickHandler=async()=>{
     setLoaderToggle(true)
     setData(null);
-    getApi();
+    await getApi();
 }
 
 const changeHandler = (e)=>{
