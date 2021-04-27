@@ -18,7 +18,13 @@ const [loaderToggle,setLoaderToggle] = useState(false);
 const getApi= async () => {
     console.log("getApi");
     try{
-        const response = await axios.get(url);
+        const response = await axios({
+            method: 'post',
+            url: '/api/recipes',
+            data: {
+              url:"https://www.iamcook.ru/showrecipe/8143"
+            }
+          });
         setData(response);
         console.log("jjjjjjjjj",response);
         setLoaderToggle(false)
