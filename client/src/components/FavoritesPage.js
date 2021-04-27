@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react"
-import Input from "./Input"
-import SelectOption from "./SelectOption"
-import "./favoritepage.css"
-import Card from "./sambleCard"
+import React, { useEffect, useState } from "react";
+import Input from "./Input";
+import SelectOption from "./SelectOption";
+import "../style/favoritepage.css";
+import Card from "./sambleCard";
 
 // const myData = [{
 //     "title":"food one",
@@ -33,28 +33,26 @@ import Card from "./sambleCard"
 //     }]
 
 const FavoritesPage = () => {
-    const [data, setData] = useState(null)
-    const [option, setOption] = useState("all")
-    const [input, setInput] = useState("")
+  const [data, setData] = useState(null);
+  const [option, setOption] = useState("all");
+  const [input, setInput] = useState("");
 
-    // useEffect(() => {
+  // useEffect(() => {
 
-    // }, [input])
+  // }, [input])
 
-    console.log(option)
-    console.log(input)
-    return (
-        <div>
-            <h1>Favorite</h1>
-            <div className="filter">
-                <SelectOption handleChange={val => setOption(val)} />
-                <Input handleValue={ val => setInput(val)}/>
-            </div>
-            <div>
-               {data&&<Card data={data} />}
-            </div>
-        </div>
-    )
-}
+  console.log(option);
+  console.log(input);
+  return (
+    <div>
+      <h1>Favorite</h1>
+      <div className="filter">
+        <SelectOption handleChange={(val) => setOption(val)} />
+        <Input handleValue={(val) => setInput(val)} />
+      </div>
+      <div>{data && <Card data={data} />}</div>
+    </div>
+  );
+};
 
-export default FavoritesPage
+export default FavoritesPage;

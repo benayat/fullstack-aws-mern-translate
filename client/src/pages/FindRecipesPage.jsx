@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Input from '../Input/Input';
-import Button from '../Button/Button';
-import RecipeCard from '../RecipeCard/RecipeCard';
-import {Spinner} from '../Spinner/Spinner.components';
-import '../FindRecipesPage/FindRecipeStyle.css';
+import Input from '../components/Input/Input';
+import Button from '../components/Button/Button';
+import RecipeCard from '../components/RecipeCard/RecipeCard';
+import {Spinner} from '../components/Spinner/Spinner.components';
+import '../style/FindRecipeStyle.css';
 
 const FindRecipesPage = () => {
 
