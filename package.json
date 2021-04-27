@@ -8,7 +8,7 @@
     "build": "cd client && npm install && npm run build ",
     "dev": "concurrently \"cd client && npm start\" \"cd server && nodemon ./index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "concurrently \"cd client && npm install\" \"cd server && npn install\""
+    "setup": "concurrently \"cd client && npm install\" \"cd server && npm install\""
   },
   "repository": {
     "type": "git",
