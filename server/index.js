@@ -21,14 +21,10 @@ if (process.env.NODE_ENV === "production") {
 } else {
   app.use(express.static(path.join(__dirname, "../client/public")));
 }
-<<<<<<< HEAD
-=======
-
-const proxy = require("http-proxy-middleware");
 
 app.use(cors());
 app.use(express.json());
->>>>>>> 6d381bf6423224dc002f655c20938ec31b22e609
+
 app.use("/api/recipes", recipeRouter);
 
 app.listen(port, () => console.log(`application start at ${port}`));
