@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Input from '../components/Input/Input';
-import Button from '../components/Button/Button';
-import RecipeCard from '../components/RecipeCard/RecipeCard';
-import {Spinner} from '../components/Spinner/Spinner.components';
-import '../style/FindRecipeStyle.css';
+import Input from '../Input/Input';
+import Button from '../Button/Button';
+import RecipeCard from '../RecipeCard/RecipeCard';
+import {Spinner} from '../Spinner/Spinner.components';
+import './FindRecipeStyle.css';
 
 const FindRecipesPage = () => {
 
 const [data,setData] = useState(null);
 const [url,setUrl] = useState();
 const [loaderToggle,setLoaderToggle] = useState(false);
-
+// const [description,setDescription] = useState();
+// const [ingredients,setIngredients] = useState();
+// const [prepStages,setPrepStages] = useState();
 
 const getApi= async () => {
-    console.log("getApi");
+    console.log("postAPI");
+    console.log(url)
     try{
-        const response = await axios.get(url);
+        const response = await axios.post("api/recipes",url);
         setData(response);
-        console.log("jjjjjjjjj",response);
+        console.log("hhhhhhhh",response);
         setLoaderToggle(false)
         
        
@@ -43,7 +46,7 @@ const changeHandler = (e)=>{
         <h1>Recipes from ... </h1>
             <div className="recipeSearch">
                 <Input change={changeHandler}/>
-                <Button click={clickHandler} content="Translate"/>
+                <Button click={clickHandler} content="Search"/>
             </div>
             {
                 (data==null) ? null :<RecipeCard/>
