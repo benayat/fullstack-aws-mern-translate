@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Header.components.css";
+import "../style/Header.components.css";
 
 export const Header = () => {
   return (
@@ -14,17 +14,17 @@ export const Header = () => {
             <ul>
               <li className="item">
                 <Link to="/">
-                <i class="fas fa-home">Home</i> 
+                <i className="fas fa-home">Home</i> 
               </Link>
               </li>
               <li className="item">
                 <Link to="/recipes">
-              <i class="fas fa-utensils">Recipes</i> 
+              <i className="fas fa-utensils">Recipes</i> 
                 </Link>
               </li>
               <li className="item">
                 <Link to="/myrecipes">
-              <i class="fas fa-book">My Recipes</i>
+              <i className="fas fa-book">My Recipes</i>
                 </Link>
               </li>
             </ul>
