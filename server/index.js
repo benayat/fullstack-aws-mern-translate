@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/public")));
 }
 
-const proxy = require("http-proxy-middleware");
+// const proxy = require("http-proxy-middleware");
 
 app.use(cors());
 app.use(express.json());
