@@ -1,0 +1,7 @@
+.filter{
+    display:  flex;
+}
+
+input, select{
+    outline: 0;
+}

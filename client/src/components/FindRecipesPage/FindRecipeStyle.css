@@ -1,0 +1,23 @@
+.recipesContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    /* background-image: url('../../Assets/food3.jpg'); */
+    background-color: #FFFAFC;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+label{
+    /* color: white; */
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+/* h1{
+    color: white;
+} */
+
+.recipeSearch{
+   display: flex; 
+}

@@ -1,0 +1,17 @@
+.btn{
+    /* font-family: 'Rancho', cursive; */
+    font-size: 25px;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    background-color: #1a759f;
+    border: none;
+    cursor: pointer;
+    color:white;
+}
+
+.btn:hover{
+    background-color: #1a759f;
+    color:white;
+}

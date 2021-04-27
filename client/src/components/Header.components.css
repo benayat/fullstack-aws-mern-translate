@@ -1,0 +1,46 @@
+.header {
+  width: 100vw;
+  color: #f4f4f4;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  padding: 1em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-photo {
+  background: url("../Assets/logo.png") no-repeat center center/cover;
+}
+
+.items-wrapper {
+  text-align: center;
+  width: 33%;
+}
+
+.items-wrapper > ul {
+  list-style: none;
+}
+
+.items-wrapper > ul > li {
+  padding: 1em;
+  display: inline;
+}
+
+.items-wrapper > ul > .item > * {
+  cursor: pointer;
+}
+
+.logo {
+  display: inline-block;
+  padding: 1em;
+  width: 33%;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

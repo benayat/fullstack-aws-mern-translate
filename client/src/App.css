@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio&display=swap");
+
+:root {
+  --primary-color: #333;
+  --text-color-bright: #f4f4f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antonio", sans-serif;
+}
+
+.bg-dark {
+  background-color: var(--primary-color);
+}
+
+.text-white {
+  color: var(--text-color-bright);
+}
