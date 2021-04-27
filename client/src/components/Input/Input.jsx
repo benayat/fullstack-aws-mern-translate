@@ -6,7 +6,7 @@ const Input =({change})=>{
 
   return (
     <div>
-       <input className="input" onChange={change}/>
+       <input className="input" onChange={change} placeholder="Paste URL here"/>
    </div>
   );
 }

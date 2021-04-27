@@ -18,9 +18,9 @@ const [loaderToggle,setLoaderToggle] = useState(false);
 const getApi= async () => {
     console.log("getApi");
     try{
-        const response = await axios.get('https://bankappinna.herokuapp.com/api/users');
+        const response = await axios.get(url);
         setData(response);
-        console.log(response);
+        console.log("jjjjjjjjj",response);
         setLoaderToggle(false)
         
        
@@ -44,7 +44,6 @@ const changeHandler = (e)=>{
       <div className="recipesContainer">
         <h1>Recipes from ... </h1>
             <div className="recipeSearch">
-                <label>Paste URL here:</label>
                 <Input change={changeHandler}/>
                 <Button click={clickHandler} content="Search"/>
             </div>
