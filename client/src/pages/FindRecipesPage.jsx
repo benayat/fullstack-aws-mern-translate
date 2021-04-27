@@ -51,7 +51,7 @@ const changeHandler = (e)=>{
         <h1>Recipes from ... </h1>
             <div className="recipeSearch">
                 <Input change={changeHandler}/>
-                <Button click={clickHandler} content="Search"/>
+                <Button click={clickHandler} content="Translate"/>
             </div>
             {
                 (data==null) ? null :<RecipeCard/>
