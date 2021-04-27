@@ -1,8 +1,6 @@
 const puppeteer = require("puppeteer");
 
 const recipeScrapper = async (recipeURL) => {
-  // let baseUrl = "https://www.iamcook.ru/showrecipe/";
-  // let recipeURL = `${baseUrl}${endPoint}`;
   console.log(recipeURL);
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -19,7 +17,6 @@ const recipeScrapper = async (recipeURL) => {
     let ingredients = Array.from(
       document.querySelectorAll("p[itemprop='recipeIngredient'  ]")
     ).map((elem) => elem.innerText);
-
     console.log({ ingredients });
     const time = document.querySelector(
       "#recbody > div.ingredients > div > ul > li.time.tt"
@@ -37,7 +34,7 @@ const recipeScrapper = async (recipeURL) => {
       .filter((x) => x !== "" && x !== "\n");
     const picture = document.querySelector(
       "#recbody > div.resulphotoandsnaps > figure > img"
-    ).baseURI;
+    ).src;
     return {
       title,
       description,

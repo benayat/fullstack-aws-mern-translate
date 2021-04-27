@@ -5,6 +5,9 @@ const puppeteer = require("puppeteer");
 const createRecipe = async (req, res) => {
   try {
     console.log(req.body.url);
+
+    let checkExists = await Recipe.findone({ url: req.body.url });
+    if (checkExists) throw Error("already exists");
     let recipeScrapped = await recipeScrapper(req.body.url);
     recipeScrapped = {
       ...recipeScrapped,
@@ -14,6 +17,9 @@ const createRecipe = async (req, res) => {
     await recipe.save();
     res.status(201).send(recipe);
   } catch (e) {
+    if (e.message === "already exists") {
+      res.status(400).send(checkExists);
+    }
     console.log(e.message);
     res.status(400).send(e);
   }
