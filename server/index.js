@@ -22,6 +22,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/public")));
 }
 
+<<<<<<< HEAD
+// const proxy = require("http-proxy-middleware");
+
+=======
+>>>>>>> 4a533c67084f24827a40b36d35f078c2f695655b
 app.use(cors());
 app.use(express.json());
 

@@ -1,5 +1,5 @@
 import React from "react";
-import axios from 'axios';
+// import axios from 'axios';
 import './RecipeCardStyle.css';
 
 const RecipeCard =({title,description,ingredients,prepStages,image,cal,prepTime})=>{
