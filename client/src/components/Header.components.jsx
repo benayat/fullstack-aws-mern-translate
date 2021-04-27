@@ -1,7 +1,24 @@
 import { Link } from "react-router-dom";
 import "../style/Header.components.css";
 
+const navItems = [{path:"/",iconClass:"fas fa-home", sectionName:"Home"},
+                  {path:"/recipes",iconClass:"fas fa-utensils",sectionName:"Recipes"},
+                  {path:"/myrecipes",iconClass:"fas fa-book",sectionName:"My Recipes"}]
+
+
 export const Header = () => {
+
+  const createNavLinks = () => {
+    return navItems.map((item) => {
+      return (
+         <li className="item">
+        <Link to={item.path}>
+        <i className={item.iconClass}>{item.sectionName}</i>
+        </Link>
+      </li>
+    )})
+  }
+
   return (
     <div className="header bg-dark text-white">
       <div className="header-container">
@@ -12,26 +29,12 @@ export const Header = () => {
         </div>
         <div className="items-wrapper">
             <ul>
-              <li className="item">
-                <Link to="/">
-                <i className="fas fa-home">Home</i> 
-              </Link>
-              </li>
-              <li className="item">
-                <Link to="/recipes">
-              <i className="fas fa-utensils">Recipes</i> 
-                </Link>
-              </li>
-              <li className="item">
-                <Link to="/myrecipes">
-              <i className="fas fa-book">My Recipes</i>
-                </Link>
-              </li>
+            {createNavLinks()}
             </ul>
         </div>
         <div className="items-wrapper">
             <ul>
-              <li></li>
+             
             </ul>
         </div>
       </div>
