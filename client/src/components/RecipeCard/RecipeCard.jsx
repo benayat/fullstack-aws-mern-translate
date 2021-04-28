@@ -2,16 +2,27 @@ import React from "react";
 import axios from 'axios';
 import './RecipeCardStyle.css';
 
-const RecipeCard = ({data,url})=>{
-
-const clickHandler = async () =>{
+const RecipeCard = ({data,url,isDeletable=false})=>{
+console.log(isDeletable);
+const clickHandlerFav = async () =>{
+    console.log(url);
     try{
-        // const response = await axios.post('/api/favourites', { url:url});
+        await axios.post("/api/favourites",{ url:url});
       
      }catch(err){
              console.log(err); 
      }
+}
 
+const deleteHandler = async ()=>{
+    try{
+        await axios.delete(`/api/favourites/byid/${data.id}`);
+
+    }catch(e){
+        console.log(e);
+        console.log("client delete");
+    }
+    
 }
 
   return (
@@ -28,8 +39,8 @@ const clickHandler = async () =>{
                         })
                     }   
                 </ol>
-                <p></p>
-                <p></p>
+                <p>data.calories</p>
+                <p>data.time</p>
             </div>
             <div className="miniCard">
                 <h3>Preparation</h3>
@@ -44,7 +55,13 @@ const clickHandler = async () =>{
             </div>
             <img className="miniCard" src={data.picture} alt="" width="" height=""/>
         </div>
-        <button className="heartBtn" onClick={clickHandler}><i className="heartIcon fas fa-heart fa-3x"></i></button>
+        <div>
+        <button className="heartBtn" onClick={clickHandlerFav}><i className="heartIcon fas fa-heart fa-3x"></i></button>
+       
+         {isDeletable && <button onClick={deleteHandler}><i className="far fa-trash-alt fa-3x"></i></button>}
+         </div>
+
+        
    </div>
   );
 }

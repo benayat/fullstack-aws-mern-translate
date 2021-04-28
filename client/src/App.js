@@ -17,13 +17,15 @@ export const App = () => {
           <Route
             path="/favorites"
             exact
-            component={() => <FavoritesPage title="Your Favo(u)rite recipes" />}
+            component={() => <FavoritesPage title="Your Favo(u)rite recipes" endpoint="favourites" isDeletable={true}
+            />}
           />
           <Route
             path="/history"
             exact
             component={() => (
-              <FavoritesPage title="Your Awesome Search History" />
+              <FavoritesPage title="Your Awesome Search History" endpoint="recipes"
+              />
             )}
           />
           <Route path="/" component={NotFoundPage} />
