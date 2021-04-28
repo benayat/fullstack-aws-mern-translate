@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/benayat/fullstack-aws-mern-translate#readme",
   "dependencies": {
+    "aws-sdk": "^2.894.0",
     "concurrently": "^6.0.2",
     "express": "^4.17.1",
     "nodemon": "^2.0.7"
