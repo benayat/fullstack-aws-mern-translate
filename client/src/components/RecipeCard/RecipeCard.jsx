@@ -53,10 +53,10 @@ const deleteHandler = async ()=>{
             </div>
             <img className="miniCard" src={data.picture} alt="" width="" height=""/>
         </div>
-        <div>
+        <div className="deleteIcon">
         <button className="heartBtn" onClick={clickHandlerFav}><i className="heartIcon fas fa-heart fa-3x"></i></button>
        
-         {isDeletable && <button onClick={deleteHandler}><i className="far fa-trash-alt fa-3x"></i></button>}
+         {isDeletable && <button className="deleteBtn" onClick={deleteHandler}><i className="far fa-trash-alt fa-3x"></i></button>}
          </div>
 
         
