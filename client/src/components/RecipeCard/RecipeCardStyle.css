@@ -57,8 +57,18 @@
     border: none;
     cursor: pointer;
     margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 .heartIcon{
     color: red;
+}
+
+.deleteBtn{
+    border:none;
+}
+
+.deleteBtn i{
+    color: rgb(80, 17, 17);
+    background: transparent;
 }
