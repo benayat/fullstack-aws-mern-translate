@@ -3,15 +3,16 @@ import "../style/Header.components.css";
 
 const navItems = [{path:"/",iconClass:"fas fa-home", sectionName:"Home"},
                   {path:"/recipes",iconClass:"fas fa-utensils",sectionName:"Recipes"},
-                  {path:"/myrecipes",iconClass:"fas fa-book",sectionName:"My Recipes"}]
+                  {path:"/favorites",iconClass:"fas fa-heart",sectionName:"My Recipes"},
+                  {path:"/history",iconClass:"fas fa-book",sectionName:"Recipes History"}]
 
 
 export const Header = () => {
 
   const createNavLinks = () => {
-    return navItems.map((item) => {
+    return navItems.map((item,index) => {
       return (
-         <li className="item">
+         <li className="item" key={index}>
         <Link to={item.path}>
         <i className={item.iconClass}>{item.sectionName}</i>
         </Link>
@@ -32,12 +33,7 @@ export const Header = () => {
             {createNavLinks()}
             </ul>
         </div>
-        <div className="items-wrapper">
-            <ul>
-             
-            </ul>
         </div>
       </div>
-    </div>
   );
 };

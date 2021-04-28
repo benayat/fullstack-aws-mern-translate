@@ -14,7 +14,18 @@ export const App = () => {
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/recipes" exact component={FindRecipesPage} />
-          <Route path="/myrecipes" exact component={FavoritesPage} />
+          <Route
+            path="/favorites"
+            exact
+            component={() => <FavoritesPage title="Your Favo(u)rite recipes" />}
+          />
+          <Route
+            path="/history"
+            exact
+            component={() => (
+              <FavoritesPage title="Your Awesome Search History" />
+            )}
+          />
           <Route path="/" component={NotFoundPage} />
         </Switch>
       </BrowserRouter>
