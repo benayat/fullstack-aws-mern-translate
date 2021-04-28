@@ -23,33 +23,33 @@ const createFavourite = async (req, res) => {
   }
 };
 
-const getAll = ()=>{
-    try {
-        const favourites = await Favourite.find({});
-        res.status(200).send(recipes);
-      } catch (e) {
-        res.status(404).send(e);
-      }
-}
-const deleteById = (req,res)=>{
-    try{
-        const toDelete = await findOneAndDelete({id:req.params.id});
-        res.status(200).send(toDelete);
-    }catch(e){
-        res.status(404).send(e);
-    }
-}
-const deleteAll = async (req,res)=>{
-    try{
-        const result = await deleteMany({});
-        res.status(200).send(result);
-    }catch(e){
-        res.status(500).send(e)
-    }
-}
+const getAll = async (req, res) => {
+  try {
+    const favourites = await Favourite.find({});
+    res.status(200).send(recipes);
+  } catch (e) {
+    res.status(404).send(e);
+  }
+};
+const deleteById = async (req, res) => {
+  try {
+    const toDelete = await findOneAndDelete({ id: req.params.id });
+    res.status(200).send(toDelete);
+  } catch (e) {
+    res.status(404).send(e);
+  }
+};
+const deleteAll = async (req, res) => {
+  try {
+    const result = await deleteMany({});
+    res.status(200).send(result);
+  } catch (e) {
+    res.status(500).send(e);
+  }
+};
 module.exports = {
-    createFavourite,
-    getAll,
-    deleteById,
-    deleteAll,
-}
+  createFavourite,
+  getAll,
+  deleteById,
+  deleteAll,
+};
