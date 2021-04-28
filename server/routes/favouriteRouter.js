@@ -7,9 +7,9 @@ const {
   deleteById,
   deleteAll,
 } = require("../controllers/favoritesController");
-recipeRouter.post("/", createFavourite);
-recipeRouter.get("/", getAll);
-recipeRouter.delete("/", deleteAll);
-recipeRouter.delete("/byid/:id", deleteById);
+favouriteRouter.post("/", createFavourite);
+favouriteRouter.get("/", getAll);
+favouriteRouter.delete("/", deleteAll);
+favouriteRouter.delete("/byid/:id", deleteById);
 
 module.exports = favouriteRouter;
