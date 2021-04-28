@@ -1,8 +1,14 @@
 const mongoose = require("mongoose");
-
+const assert = require("assert");
 const recipeSchema = new mongoose.Schema({
   title: {
     type: String,
+    validator: {
+      validate(value) {
+        assert(/^[a-zA-Z\s]*$/.test(value));
+      },
+      message: "should be only letters!",
+    },
   },
   description: {
     type: String,
@@ -24,6 +30,7 @@ const recipeSchema = new mongoose.Schema({
   },
   id: {
     type: String,
+    unique: true,
   },
 });
 
