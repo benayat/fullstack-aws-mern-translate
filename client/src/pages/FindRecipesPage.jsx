@@ -14,7 +14,7 @@ const [loaderToggle,setLoaderToggle] = useState(false);
 
 
 const getApi= async () => {
-    console.log("getApi");
+    console.log("getApi",url);
     try{
         const response = await axios.post("/api/recipes",{ url:url});
         setData(response.data);

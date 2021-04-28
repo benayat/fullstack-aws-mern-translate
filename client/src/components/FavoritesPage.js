@@ -6,7 +6,7 @@ import "../style/favoritepage.css";
 import RecipeCard from "./RecipeCard/RecipeCard";
 import { Spinner } from "./Spinner/Spinner.components";
 
-const FavoritesPage = ({ title, endpoint }) => {
+const FavoritesPage = ({ title, endpoint,isDeletable=false }) => {
   const [data, setData] = useState([]);
   const [option, setOption] = useState("all");
   const [input, setInput] = useState("");
@@ -23,7 +23,7 @@ const FavoritesPage = ({ title, endpoint }) => {
 
   const renderFavorites = () => {
     return data.map((recipe) => {
-      return <RecipeCard key={recipe.id} data={recipe} />;
+      return <RecipeCard key={recipe.id} data={recipe} isDeletable={isDeletable} />;
     });
   };
 

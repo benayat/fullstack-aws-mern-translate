@@ -17,7 +17,7 @@ export const App = () => {
           <Route
             path="/favorites"
             exact
-            component={() => <FavoritesPage title="Your Favo(u)rite recipes" endpoint="favourites"
+            component={() => <FavoritesPage title="Your Favo(u)rite recipes" endpoint="favourites" isDeletable={true}
             />}
           />
           <Route
