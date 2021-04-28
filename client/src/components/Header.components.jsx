@@ -3,7 +3,8 @@ import "../style/Header.components.css";
 
 const navItems = [{path:"/",iconClass:"fas fa-home", sectionName:"Home"},
                   {path:"/recipes",iconClass:"fas fa-utensils",sectionName:"Recipes"},
-                  {path:"/myrecipes",iconClass:"fas fa-book",sectionName:"My Recipes"}]
+                  {path:"/favorites",iconClass:"fas fa-heart",sectionName:"My Recipes"},
+                  {path:"/history",iconClass:"fas fa-book",sectionName:"Recipes History"}]
 
 
 export const Header = () => {

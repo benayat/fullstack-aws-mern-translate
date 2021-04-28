@@ -1,7 +1,12 @@
-.filter{
-    display:  flex;
+.filter {
+  display: flex;
 }
 
-input, select{
-    outline: 0;
+input,
+select {
+  outline: 0;
+}
+
+.spinner {
+  text-align: center;
 }

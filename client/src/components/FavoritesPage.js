@@ -4,16 +4,18 @@ import axios from "axios";
 import SelectOption from "./SelectOption";
 import "../style/favoritepage.css";
 import RecipeCard from "./RecipeCard/RecipeCard";
-import FindRecipesPage from "../pages/FindRecipesPage";
+import { Spinner } from "./Spinner/Spinner.components";
 
-const FavoritesPage = () => {
+const FavoritesPage = ({ title }) => {
   const [data, setData] = useState([]);
   const [option, setOption] = useState("all");
   const [input, setInput] = useState("");
+  const [loaderToggle, setLoaderToggle] = useState(true);
 
   useEffect(() => {
     const fetchAllFavorites = async () => {
       const favorites = await axios.get("/api/recipes");
+      setLoaderToggle(false);
       setData(favorites.data);
     };
     fetchAllFavorites();
@@ -29,12 +31,12 @@ const FavoritesPage = () => {
   console.log(input);
   return (
     <div>
-      <h1>Favorite</h1>
+      <h1>{title}</h1>
       <div className="filter">
         <SelectOption handleChange={(val) => setOption(val)} />
         <Input handleValue={(val) => setInput(val)} />
       </div>
-      {renderFavorites()}
+      {loaderToggle ? <Spinner /> : renderFavorites()}
     </div>
   );
 };
