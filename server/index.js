@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 const recipeRouter = require("./routes/recipeRouter");
-
+const favouriteRouter = require("./routes/favouriteRouter");
 app.use(cors());
 app.use(express.json());
 app.use("/api/recipes", recipeRouter);
@@ -26,5 +26,5 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/recipes", recipeRouter);
-
+app.use("api/favourites", favouriteRouter);
 app.listen(port, () => console.log(`application start at ${port}`));
