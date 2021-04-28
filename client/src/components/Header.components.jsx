@@ -24,7 +24,7 @@ export const Header = () => {
     <div className="header bg-dark text-white">
       <div className="header-container">
         <div className="logo">
-          <Link to="">
+          <Link to="/">
           <div className="logo-photo"/> <h2 className="logo-text">Recipes Translator</h2>
           </Link>
         </div>
