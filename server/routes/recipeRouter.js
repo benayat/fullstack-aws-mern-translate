@@ -5,6 +5,7 @@ const recipeRouter = express.Router();
 const {
   createRecipe,
   deleteRecipe,
+  getALl,
 } = require("../controllers/recipeController");
 recipeRouter.post("/", createRecipe);
 

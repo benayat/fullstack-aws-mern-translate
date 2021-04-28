@@ -24,7 +24,14 @@ const createRecipe = async (req, res) => {
     res.status(400).send(e);
   }
 };
-
+const getAll = async (req, res) => {
+  try {
+    const recipes = await Recipe.find({});
+    res.status(200).send(recipes);
+  } catch (e) {
+    res.status(404).send(e);
+  }
+};
 const deleteRecipe = async (req, res) => {
   try {
     console.log("delete");
@@ -36,5 +43,6 @@ const deleteRecipe = async (req, res) => {
 };
 module.exports = {
   createRecipe,
+  getALl,
   deleteRecipe,
 };
