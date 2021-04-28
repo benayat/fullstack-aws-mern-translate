@@ -9,9 +9,9 @@ const navItems = [{path:"/",iconClass:"fas fa-home", sectionName:"Home"},
 export const Header = () => {
 
   const createNavLinks = () => {
-    return navItems.map((item) => {
+    return navItems.map((item,index) => {
       return (
-         <li className="item">
+         <li className="item" key={index}>
         <Link to={item.path}>
         <i className={item.iconClass}>{item.sectionName}</i>
         </Link>
@@ -32,12 +32,7 @@ export const Header = () => {
             {createNavLinks()}
             </ul>
         </div>
-        <div className="items-wrapper">
-            <ul>
-             
-            </ul>
         </div>
       </div>
-    </div>
   );
 };
