@@ -8,7 +8,7 @@ const {
   getAll,
 } = require("../controllers/recipeController");
 recipeRouter.post("/", createRecipe);
-recipeRouter.get("/", getALl);
+recipeRouter.get("/", getAll);
 recipeRouter.delete("/:id", deleteRecipe);
 
 module.exports = recipeRouter;
