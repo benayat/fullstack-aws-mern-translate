@@ -39,8 +39,8 @@ const deleteHandler = async ()=>{
                         })
                     }   
                 </ol>
-                <p>data.calories</p>
-                <p>data.time</p>
+                <p>{data.calories}</p>
+                <p>{data.time}</p>
             </div>
             <div className="miniCard">
                 <h3>Preparation</h3>
