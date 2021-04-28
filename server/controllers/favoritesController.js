@@ -13,7 +13,7 @@ const createFavourite = async (req, res) => {
     };
     const favourite = await new Favourite(recipeScrapped);
     await favourite.save();
-    res.status(201).send(recipe);
+    res.status(201).send(favourite);
   } catch (e) {
     if (e.message === "already exists") {
       res.status(400).send(checkExists);
@@ -26,7 +26,7 @@ const createFavourite = async (req, res) => {
 const getAll = async (req, res) => {
   try {
     const favourites = await Favourite.find({});
-    res.status(200).send(recipes);
+    res.status(200).send(favourites);
   } catch (e) {
     res.status(404).send(e);
   }
