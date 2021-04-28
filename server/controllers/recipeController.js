@@ -43,6 +43,6 @@ const deleteRecipe = async (req, res) => {
 };
 module.exports = {
   createRecipe,
-  getALl,
+  getAll,
   deleteRecipe,
 };
