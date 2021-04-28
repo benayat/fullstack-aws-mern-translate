@@ -6,7 +6,7 @@ import RecipeCard from '../components/RecipeCard/RecipeCard';
 import {Spinner} from '../components/Spinner/Spinner.components';
 import '../style/FindRecipeStyle.css';
 
-const FindRecipesPage = () => {
+const FindRecipesPage = ({}) => {
 
 const [data,setData] = useState(null);
 const [url,setUrl] = useState();
@@ -39,13 +39,13 @@ const changeHandler = (e)=>{
 }
     return (
       <div className="recipesContainer">
-        <h1>Recipes from ... </h1>
+        <h1>Recipes From Russian </h1>
             <div className="recipeSearch">
                 <Input change={changeHandler}/>
                 <Button click={clickHandler} content="Translate"/>
             </div>
             {
-                (data==null) ? null :<RecipeCard data={data}/>
+                (data==null) ? null :<RecipeCard data={data} url={url}/>
                 
             }
             {

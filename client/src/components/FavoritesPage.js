@@ -6,7 +6,7 @@ import "../style/favoritepage.css";
 import RecipeCard from "./RecipeCard/RecipeCard";
 import { Spinner } from "./Spinner/Spinner.components";
 
-const FavoritesPage = ({ title }) => {
+const FavoritesPage = ({ title, endpoint }) => {
   const [data, setData] = useState([]);
   const [option, setOption] = useState("all");
   const [input, setInput] = useState("");
@@ -14,7 +14,7 @@ const FavoritesPage = ({ title }) => {
 
   useEffect(() => {
     const fetchAllFavorites = async () => {
-      const favorites = await axios.get("/api/recipes");
+      const favorites = await axios.get("/api/" + endpoint);
       setLoaderToggle(false);
       setData(favorites.data);
     };

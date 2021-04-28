@@ -1,18 +1,16 @@
 import React from "react";
-// import axios from 'axios';
+import axios from 'axios';
 import './RecipeCardStyle.css';
 
-const RecipeCard =({data})=>{
+const RecipeCard = ({data,url})=>{
 
-const clickHandler = () =>{
-    // try{
-    //     const response = await axios.post('', {
-            
-    //      });
+const clickHandler = async () =>{
+    try{
+        // const response = await axios.post('/api/favourites', { url:url});
       
-    //  }catch(err){
-    //          console.log(err); 
-    //  }
+     }catch(err){
+             console.log(err); 
+     }
 
 }
 
