@@ -12,4 +12,5 @@ export const HomePage = () => {
             </div>
     </>
     );
+    
 }

@@ -30,7 +30,7 @@ const FavoritesPage = ({ title, endpoint }) => {
   console.log(option);
   console.log(input);
   return (
-    <div>
+    <div className="wrapper">
       <h1>{title}</h1>
       <div className="filter">
         <SelectOption handleChange={(val) => setOption(val)} />
