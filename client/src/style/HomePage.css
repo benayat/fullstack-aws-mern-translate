@@ -1,9 +1,8 @@
 .homepage {
   background: url("../Assets//homepage.jpg") no-repeat center center/cover;
-  height: 100vh;
-  filter: brightness(50%) blur(4px);
+  height: 86vh;
+  filter: brightness(50%) blur(2px);
 }
-
 
 .title {
   display: flex;
@@ -22,10 +21,14 @@
   text-align: center;
 }
 
-.title h2{
+.title h2 {
   font-size: 4.5rem;
 }
 
-.title p{
+.title p {
   font-size: 1.4rem;
+}
+
+.text-red {
+  color: red;
 }
