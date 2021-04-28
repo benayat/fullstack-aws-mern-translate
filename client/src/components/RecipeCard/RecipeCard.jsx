@@ -17,12 +17,10 @@ const clickHandlerFav = async () =>{
 const deleteHandler = async ()=>{
     try{
         await axios.delete(`/api/favourites/byid/${data.id}`);
-
     }catch(e){
         console.log(e);
         console.log("client delete");
     }
-    
 }
 
   return (
